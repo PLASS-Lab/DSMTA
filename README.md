@@ -16,7 +16,7 @@ cd DL-SCDisassembly
 # Install dependencies
 python setup.py install
 ```
-## Downloading dataset 
+## Downloading pretrained weights and dataset 
 
 
 ## Running testing script 
