@@ -2,19 +2,20 @@
 <h1 align="center"><Official Repo</strong></h1>
 
 ## About
-The main objective is to create a refined dataset for side channel-based disassembly tasks using DL models. The dataset is enhanced using statistical and temporal log transformation features.
+This is the official repository of the manuscript entitled "" which propose a Deeply Supervised Multitask Autoencoder (DS-MT-AE) for brain age estimation. Our framework incorporates deep supervision to improve optimization stability and multitask learning to enhance feature representation by jointly optimizing brain age prediction with two auxiliary tasks: sex classification and image reconstruction. This repo contains suidance to create conda virtual env, downloading the pretrained weights, processed OpenBHB dataset and running test and training scripts.
 
 ## Installation of packages
 
 ```bash
 # Clone the repository
-git clone https://github.com/PLASS-Lab/DL-SCDisassembly.git
+git clone https://github.com/PLASS-Lab/DSMTA.git
 
 # Navigate to the project directory
-cd DL-SCDisassembly
+cd DSMTA
 
-# Install dependencies
-python setup.py install
+# Create Conda Env and Install dependencies
+conda create -n DSMTA_env python=3.10 --file requirements.txt
+
 ```
 ## Downloading pretrained weights and dataset 
 
