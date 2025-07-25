@@ -1,22 +1,10 @@
 # DSMTA: Deeply Supervised Multi-Task Autoencoder for Biological Brain Age estimation using T1-weighted MRI
 <h1 align="center"><Official Repo</strong></h1>
 
-<p align="left">
-  🪪&nbsp;<a href="#about">About</a>
-  | 🪄&nbsp;<a href="#Installation">Installation</a>
-  | 🗃️&nbsp;<a href="#Usage">Usage</a>
-  | 🏷️&nbsp;<a href="#Features">Features</a>
-  | 🔗&nbsp;<a href="#citation">Citation</a>
-  | 📝&nbsp;<a href="https://doi.org/10.1016/j.eswa.2024.126079" target="_blank">Paper</a>
-</p>
-
-This repository contains the code for the paper:
-[Enhancing deep learning-based side-channel analysis using feature engineering in a fully simulated IoT system](https://doi.org/10.1016/j.eswa.2024.126079)
-
 ## About
 The main objective is to create a refined dataset for side channel-based disassembly tasks using DL models. The dataset is enhanced using statistical and temporal log transformation features.
 
-## Installation
+## Installation of packages
 
 ```bash
 # Clone the repository
@@ -28,14 +16,17 @@ cd DL-SCDisassembly
 # Install dependencies
 python setup.py install
 ```
+## Downloading dataset 
 
-## Usage
+
+## Running testing script 
 
 After uploading the assembly logs, collected from GDB, to the selected folder, it can be converted to a structured CSV file using `assembleyTocsv.py`
 
 ```bash
 python assembleyTocsv.py
 ```
+## Running training script 
 
 The generated CSV file can be passed to [python-elmo](https://github.com/ThFeneuil/python-elmo) engine for power simulation.
 
