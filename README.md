@@ -15,10 +15,17 @@ cd DSMTA
 
 # Create Conda Env and Install dependencies
 conda create -n DSMTA_env python=3.10 --file requirements.txt
+conda activate DSMTA_env
 
 ```
 ## Downloading pretrained weights and dataset 
+To download pretrained weights, download the weights from the drive link()
 
+This study utilized OpenBHB dataset which is publicly available data and can be directly downloaded from the link () 
+To download the processed dataset, please execute.
+```bash
+python test_data_download.py
+python train_data_dataload.py
 
 ## Running testing script 
 
