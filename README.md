@@ -4,22 +4,22 @@
 
 ## 🔬 About
 
-`DSMTA` implements the Deeply Supervised Multi-Task Autoencoder (DS-MT-AE) introduced in our manuscript:
+`DSMTA` provides the implementation for our manuscript:
 
 > **Title:** *Deeply Supervised Multi-Task Autoencoder for Biological Brain Age Estimation Using T1-weighted MRI*
 
-This framework leverages:
-- **Deep supervision** to stabilize optimization.  
-- **Multi-task learning** for richer feature representations, jointly optimizing:
-  1. **Brain age prediction**  
-  2. **Sex classification**  
-  3. **Image reconstruction**
+Key contributions:
+- **Deep supervision** at multiple decoder depths for stable optimization.
+- **Multi-task learning**, jointly training:
+  1. Brain age prediction  
+  2. Sex classification  
+  3. Image reconstruction
 
 ## ⚙️ Features
 
-- **Stable training** via auxiliary supervision at multiple decoder depths.  
-- **Improved generalization** by coupling primary and auxiliary tasks.  
-- **Easy-to-use scripts** for data preparation, training, and inference.
+- Robust training with auxiliary losses.  
+- Enhanced feature representations via multitasking.  
+- Ready-to-use scripts and notebooks for data prep, training, and inference.
 
 ## 📥 Installation
 
@@ -37,25 +37,30 @@ This framework leverages:
 
 ## 💾 Data & Pretrained Weights
 
-### 1. Pretrained Weights
+### 1. Pretrained Model Weights
 
-Request access and download the pretrained model weights from:
+Request access and download the pretrained weights:
 
 > https://drive.google.com/drive/folders/1k8w2HuI10wOUaSyj1qPj57HHGlVUAsVz?usp=sharing
 
-Place the files in `./weights/`.
+Unzip and place all files under `./weights/`.
 
-### 2. Dataset
+### 2. OpenBHB Dataset
 
-We use the **OpenBHB** T1-weighted MRI dataset (publicly available).
+This study uses the **OpenBHB** T1-weighted MRI dataset:
 
-- **Raw data source:** `<DATASET_DOWNLOAD_LINK>`  
-- **Processed data download:**
-    ```bash
-    python scripts/download_processed_data.py
-    ```
+- **Download link:**
+  https://ieee-dataport.org/open-access/openbhb-multi-site-brain-mri-dataset-age-prediction-and-debiasing
 
-This will populate:
+- **Mandatory citation:**
+  > Benoit Dufumier, Antoine Grigis, Julie Victor, Corentin Ambroise, Vincent Frouin, Edouard Duchesnay, “OpenBHB: a Large‑Scale Multi‑Site Brain MRI Data‑set for Age Prediction and Debiasing”, *NeuroImage*, 263:119637, 2022. doi:10.1016/j.neuroimage.2022.119637
+
+To download our **processed** version of OpenBHB, run:
+```bash
+python test_data_download.py
+python train_data_download.py
+```
+This will create the directory structure:
 ```
 ├── data/
 │   ├── train/    # Training images + labels
@@ -65,28 +70,23 @@ This will populate:
 
 ## 🚀 Usage
 
-### 1. Inference (Testing)
+### Inference (Testing)
 
-Run the inference notebook to evaluate the pretrained model:
-
+Launch and run the inference notebook:
 ```bash
-jupyter notebook notebooks/inference_notebook.ipynb
+jupyter notebook Inference_Notebook.ipynb
 ```
 
-### 2. Training
+### Training
 
-Explore and launch training experiments via the provided notebooks:
-
+Open the training notebooks in the `Training_notebooks` folder:
 ```bash
-jupyter notebook notebooks/training/train_dsmta.ipynb
+jupyter notebook Training_notebooks/
 ```
 
 ## 📖 Citation
 
-If you use this code in your research, please cite:
-
-> **Authors**, "Deeply Supervised Multi-Task Autoencoder for Biological Brain Age Estimation Using T1-weighted MRI", *Journal Name*, Year.
-
+If you use this code or models in your research, please cite our paper:
 ```bibtex
 @article{your2025dsmta,
   title={Deeply Supervised Multi-Task Autoencoder for Biological Brain Age Estimation Using T1-weighted MRI},
@@ -96,9 +96,22 @@ If you use this code in your research, please cite:
 }
 ```
 
+And when using the OpenBHB dataset, also cite:
+```bibtex
+@article{dufumier2022openbhb,
+  title={OpenBHB: a Large-Scale Multi-Site Brain MRI Data-set for Age Prediction and Debiasing},
+  author={Dufumier, Benoit and Grigis, Antoine and Victor, Julie and Ambroise, Corentin and Frouin, Vincent and Duchesnay, Edouard},
+  journal={NeuroImage},
+  volume={263},
+  pages={119637},
+  year={2022},
+  doi={10.1016/j.neuroimage.2022.119637}
+}
+```
+
 ## ⚖️ License
 
-This project is released under the MIT License. See [LICENSE](LICENSE) for details.
+Released under the **MIT License**. See [LICENSE](LICENSE) for details.
 
 ---
 
